@@ -215,8 +215,11 @@ G. Nvidia Graphic Driver --> driver.run
 ==> EDIT Makefile.config
 PYTHON_INCLUDE := /usr/include/python2.7 \
         /usr/local/lib/python2.7/dist-packages/numpy/core/include
-
-## 11. Install tensorflow
+==> ADD $PYTHONPATH ; for python to import caffe module ('~/caffe/python/caffe' itself is a python module.)
+	sudo vim ~/.bashrc
+	add export PYTHONPATH=/home/<username>/caffe/python:$PYTHONPATH
+	
+## 11. Install tensorflow (check right version in tensorflow homepage, below link is for cuda 7.5)
 
 	export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl && sudo pip install --ignore-installed --upgrade $TF_BINARY_URL
 
